@@ -197,4 +197,4 @@ SkillInfo = {}
 --SkillInfo[id][4] = range (squares)
 SkillInfo[HVAN_CHAOTIC] = {2000, 5, HVAN_CHAOTIC, 10}
 SkillInfo[MH_OVERBOOST] = {90000, 5, MH_OVERBOOST, 10}
-SkillInfo[MH_PAIN_KILLER] = {10000, 10, MH_PAIN_KILLER, 1}
+SkillInfo[MH_PAIN_KILLER] = {600*1000, 10, MH_PAIN_KILLER, 5}

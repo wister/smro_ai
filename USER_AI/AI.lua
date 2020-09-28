@@ -284,12 +284,12 @@ function	OnIDLE_ST ()
 		return 
 	end
 
-	--TraceAI("I see you all: ")
+	TraceAI("I see you all: ")
 	local actors = shuffle(GetActors())
 	for i,v in ipairs(actors) do
 		TraceAI(i..": MyEnemy:"..v.." MobID:"..GetV(V_HOMUNTYPE,v))
 		--if(GetV(V_HOMUNTYPE,v) == 1078) then
-		if(IsMonster(v) and v~=MyID and v~=GetV(V_OWNER,MyID) and GetV(V_HOMUNTYPE,v)<4000) then
+		if(HOMUNCULUS_STATE~=0 and IsMonster(v) and v~=MyID and v~=GetV(V_OWNER,MyID) and GetV(V_HOMUNTYPE,v)<4000) then
 			TraceAI(i..": MyEnemy:"..v.." MobID:"..GetV(V_HOMUNTYPE,v))
 			MyState = CHASE_ST
 			MyEnemy = v

@@ -179,9 +179,10 @@ end
 
 
 function canAutoHeal (tick)
-	local ohp=HPPercent(GetV(V_OWNER,MyID))
+	local homun_hp = HPPercent(MyID)
+	local owner_hp=HPPercent(GetV(V_OWNER,MyID))
 	local distance = GetDistanceFromOwner(MyID)
-	if(ohp < AutoHealThreshold and OldHomunType == VANILMIRTH and (tick > (LastAutoHealTick + SkillInfo[HVAN_CHAOTIC][1]) or LastAutoHealTick == 0) and distance <= SkillInfo[HVAN_CHAOTIC][2]) then --vanilmirth heal hard coded for now
+	if((owner_hp < AutoHealThreshold or homun_hp < AutoHealThreshold) and OldHomunType == VANILMIRTH and (tick > (LastAutoHealTick + SkillInfo[HVAN_CHAOTIC][1]) or LastAutoHealTick == 0) and distance <= SkillInfo[HVAN_CHAOTIC][2]) then --vanilmirth heal hard coded for now
 		return true
 	end
 	--else

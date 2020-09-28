@@ -1,3 +1,11 @@
+-----------------------------
+-- Debugging
+-- /traceai, file TraceAI.txt in root folder
+
+
+
+--
+-----------------------------
 require "AI_sakray\\USER_AI\\Const"
 -----------------------------
 -- User defined configurations
@@ -22,5 +30,5 @@ FollowTryLimit = 3 --tries then change to idle
 
 HOMS = {} --Homunculus configurations
 --HOMS[id][1] = Minimum distance (squares/grids)
-HOMS[SERA]={1}
+HOMS[SERA]={3}
 HOMS[EIRA]={3}
