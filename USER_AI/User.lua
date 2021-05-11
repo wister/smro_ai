@@ -1,9 +1,9 @@
 -----------------------------
 -- Debugging
--- /traceai, file TraceAI.txt in root folder
-
-
-
+-- /traceai, file TraceAI.txt in RO root folder
+-- /hoai, to start homunculus AI
+-- Main files used: User.lua, Const.lua, Util.lua
+-- cache folder its to save ticks, depending on the HomunculusID which resets
 --
 -----------------------------
 require "AI_sakray\\USER_AI\\Const"
