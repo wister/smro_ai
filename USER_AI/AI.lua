@@ -191,7 +191,7 @@ end
 
 
 function	ProcessCommand (msg)
-
+	TraceAI("Processing command state: "..msg[1])
 	if		(msg[1] == MOVE_CMD) then
 		OnMOVE_CMD (msg[2],msg[3])
 		TraceAI ("MOVE_CMD")
@@ -534,7 +534,8 @@ end
 
 
 function OnSKILL_OBJECT_CMD_ST ()
-	
+	TraceAI ("OnSKILL_OBJECT_CMD_ST")
+
 end
 
 
@@ -732,7 +733,6 @@ function AI(myid)
 
 	local msg	= GetMsg (myid)			-- command
 	local rmsg	= GetResMsg (myid)		-- reserved command
-
 	
 	if msg[1] == NONE_CMD then
 		if rmsg[1] ~= NONE_CMD then
