@@ -250,7 +250,9 @@ function onAutoBuff_ST()
 	saveAutoBuffTick(tick)
 	LastAutoBuffTick = tick
 	--SkillObject (MyID, level, skillid, target)
-	SkillObject (MyID, MyAutoBuff[2], MyAutoBuff[3], GetV(V_OWNER,MyID))
+	if(MyAutoBuff ~= nil) then
+		SkillObject (MyID, MyAutoBuff[2], MyAutoBuff[3], GetV(V_OWNER,MyID))
+	end
 	return
 end
 
@@ -318,15 +320,12 @@ function	OnIDLE_ST ()
 
 	FollowTryCount = 0 --reseting follow tries
 	local distance = GetDistanceFromOwner(MyID)
-	--TraceAI ("Homunculus minimum distance: "..HOMS[MyType][1])
+	TraceAI ("Homunculus minimum distance: "..HOMS[MyType][1])
 	if ( distance > HOMS[MyType][1] or distance == -1) then		-- MYOWNER_OUTSIGNT_IN
 		MyState = FOLLOW_ST
 		TraceAI ("IDLE_ST -> FOLLOW_ST".." distance: "..distance)
 		return
 	end
-
-
-
 end
 
 

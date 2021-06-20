@@ -168,13 +168,17 @@ function canAutoBuff (tick)
 	--SkillInfo[id][3] = skill id (integer)
 	--SkillInfo[id][4] = range (squares)
 	local distance = GetDistanceFromOwner(MyID)
-	TraceAI ("Casting AutoBuff in: "..(tick - LastAutoBuffTick - MyAutoBuff[1]))
-	if((tick > (LastAutoBuffTick + AutoBuffTimer) or LastAutoBuffTick == 0) and tick > (LastAutoBuffTick + MyAutoBuff[1]) and distance <= MyAutoBuff[4]) then 
-		return true
+	--TraceAI ("Casting AutoBuff in: "..(tick - LastAutoBuffTick - MyAutoBuff[1]))
+	if(MyAutoBuff ~= nil) then
+		if((tick > (LastAutoBuffTick + AutoBuffTimer) or LastAutoBuffTick == 0) and tick > (LastAutoBuffTick + MyAutoBuff[1]) and distance <= MyAutoBuff[4]) then 
+			return true
+		--end
+		else
+			return false
+		end
+	else
+		return false
 	end
-	--else
-		--return false
-	--end
 end
 
 
@@ -196,7 +200,7 @@ function getAutoBuff (homType)
 	elseif (GetV(V_HOMUNTYPE,MyID) == EIRA) then
 		return SkillInfo[MH_OVERBOOST]
 	else
-
+		return nil
 	end
 end
 
